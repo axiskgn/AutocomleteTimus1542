@@ -54,7 +54,7 @@ namespace TestWork.Client.ConsoleApp
 
             //thread.Join();
 
-
+            var cnt = 0;
 
             foreach (var findValue in searchData)
             {
@@ -94,6 +94,12 @@ namespace TestWork.Client.ConsoleApp
                 var endTime = DateTime.Now;
                 Debug.WriteLine(endTime-startTime);
                 Console.Write(request);
+                cnt++;
+
+                if (cnt > 100)
+                {
+                    return;
+                }
 
             }
 
