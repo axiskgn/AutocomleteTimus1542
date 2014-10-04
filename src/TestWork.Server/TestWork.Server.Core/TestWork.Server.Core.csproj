@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{912D8F09-ACA8-43A1-BCA1-B86A57BA2EF5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{8846DE99-3DC8-4A6B-A23E-23E2593BF2A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestWork.ConsoleServerApp</RootNamespace>
-    <AssemblyName>TestWork.ConsoleServerApp</AssemblyName>
+    <RootNamespace>TestWork.Server.Core</RootNamespace>
+    <AssemblyName>TestWork.Server.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,31 +39,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="CommandManager.cs" />
+    <Compile Include="NetworkDataOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerCommandGet.cs" />
+    <Compile Include="TestWorkServer.cs" />
+    <Compile Include="ServerClient.cs" />
+    <Compile Include="ThreadPoolStrategy.cs" />
+    <Compile Include="ThreadStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestWork.Common\TestWork.Common.csproj">
+    <ProjectReference Include="..\..\Common\TestWork.Common\TestWork.Common.csproj">
       <Project>{52056842-5605-418B-843C-ECC28D9C8443}</Project>
       <Name>TestWork.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestWork.Core\TestWork.Core.csproj">
-      <Project>{3B596E55-30E1-4F7B-A53F-D883145A574D}</Project>
-      <Name>TestWork.Core</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TestWork.Server.Common\TestWork.Server.Common.csproj">
-      <Project>{97231a9e-945c-4971-9e6b-36262d0c0b47}</Project>
+      <Project>{97231A9E-945C-4971-9E6B-36262D0C0B47}</Project>
       <Name>TestWork.Server.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestWork.Server.Core\TestWork.Server.Core.csproj">
-      <Project>{8846DE99-3DC8-4A6B-A23E-23E2593BF2A7}</Project>
-      <Name>TestWork.Server.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="test.in">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

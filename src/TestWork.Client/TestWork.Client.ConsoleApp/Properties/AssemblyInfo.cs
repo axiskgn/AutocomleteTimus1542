@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TestWork.ConsoleClientApp")]
+[assembly: AssemblyTitle("TestWork.Client.ConsoleApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TestWork.ConsoleClientApp")]
+[assembly: AssemblyProduct("TestWork.Client.ConsoleApp")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("941e1c59-e748-4524-b1e4-1970aa98a36a")]
+[assembly: Guid("ec1753fe-4da0-4585-8b60-49d96cdb2165")]
 
 // Version information for an assembly consists of the following four values:
 //

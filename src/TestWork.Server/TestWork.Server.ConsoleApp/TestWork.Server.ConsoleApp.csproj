@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DC564F79-00C1-4100-A476-192FD5A1A25B}</ProjectGuid>
+    <ProjectGuid>{2378E396-8BD5-4191-95A9-031495C82715}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestWork.ConsoleClientApp</RootNamespace>
-    <AssemblyName>TestWork.ConsoleClientApp</AssemblyName>
+    <RootNamespace>TestWork.Server.ConsoleApp</RootNamespace>
+    <AssemblyName>TestWork.Server.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -50,13 +50,21 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestWork.Common\TestWork.Common.csproj">
+    <ProjectReference Include="..\..\Common\TestWork.Common\TestWork.Common.csproj">
       <Project>{52056842-5605-418B-843C-ECC28D9C8443}</Project>
       <Name>TestWork.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestWork.Core\TestWork.Core.csproj">
+    <ProjectReference Include="..\..\Common\TestWork.Core\TestWork.Core.csproj">
       <Project>{3B596E55-30E1-4F7B-A53F-D883145A574D}</Project>
       <Name>TestWork.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Server.Common\TestWork.Server.Common.csproj">
+      <Project>{97231A9E-945C-4971-9E6B-36262D0C0B47}</Project>
+      <Name>TestWork.Server.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Server.Core\TestWork.Server.Core.csproj">
+      <Project>{8846DE99-3DC8-4A6B-A23E-23E2593BF2A7}</Project>
+      <Name>TestWork.Server.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,17 +1,19 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using TestWork.Common;
 using TestWork.Core.DataInputs;
-using TestWork.Core.DataOutputs;
 using TestWork.Core.Storages;
 using TestWork.Server.Core;
 
-namespace TestWork.ConsoleServerApp
+namespace TestWork.Server.ConsoleApp
 {
     class Program
     {
         static void Main(string[] args)
         {
+
+            
             Console.Write("Запуск сервера...");
             var cmdExecutor = new CommandManager();
 
@@ -24,10 +26,12 @@ namespace TestWork.ConsoleServerApp
             dataInput.SaveQueryInfo += s => { };
 
             dataInput.Start();
+            ThreadPool.SetMinThreads(2, 2);
+            ThreadPool.SetMaxThreads(10, 10);
 
-            cmdExecutor.AddCommand("get", new ServerCommandGet(storage, stream => new DataOutput(new StreamWriter(stream))));
+            cmdExecutor.AddCommand("get", new ServerCommandGet(storage, stream => new NetworkDataOutput(stream)));
 
-            var server = new TestWorkServer(new ThreadStrategy(), () => new ServerClient(cmdExecutor));
+            var server = new TestWorkServer(new ThreadPoolStrategy(), () => new ServerClient(cmdExecutor));
             server.Start(1117);
             Console.WriteLine(" сервер запущен");
 
