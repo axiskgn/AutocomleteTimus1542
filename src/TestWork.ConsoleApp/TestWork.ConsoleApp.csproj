@@ -55,11 +55,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestWork.Common\TestWork.Common.csproj">
+    <ProjectReference Include="..\Common\TestWork.Common\TestWork.Common.csproj">
       <Project>{52056842-5605-418B-843C-ECC28D9C8443}</Project>
       <Name>TestWork.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestWork.Core\TestWork.Core.csproj">
+    <ProjectReference Include="..\Common\TestWork.Core\TestWork.Core.csproj">
       <Project>{3B596E55-30E1-4F7B-A53F-D883145A574D}</Project>
       <Name>TestWork.Core</Name>
     </ProjectReference>

@@ -17,7 +17,8 @@ namespace TestWork.ConsoleApp
 
             #region Точка композиции
 
-            IDataInput dataInput = new DataInput(Console.In);
+            IDataDictionaryInput dataDictionaryInput = new DataDictionaryInput(Console.In);
+            IDataQueryInput dataQueryInput = new DataQueryInput(Console.In);
             IStorage storage = new Storage4();
             IDataOutput dataOutput = new DataOutput(Console.Out);
             var searchData = new List<string>();
@@ -25,7 +26,7 @@ namespace TestWork.ConsoleApp
 
             #endregion
 
-            mainProcess.Process(dataInput, storage, searchData, dataOutput);
+            mainProcess.Process(dataDictionaryInput, dataQueryInput, storage, searchData, dataOutput);
 
             #region Замер производительности
 

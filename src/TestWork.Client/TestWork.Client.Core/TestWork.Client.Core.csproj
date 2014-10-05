@@ -39,8 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandGet.cs" />
+    <Compile Include="NetworkClientController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestWorkClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestWork.Client.Common\TestWork.Client.Common.csproj">
+      <Project>{D243DE40-81B2-4514-8A30-0D5B04700A5A}</Project>
+      <Name>TestWork.Client.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

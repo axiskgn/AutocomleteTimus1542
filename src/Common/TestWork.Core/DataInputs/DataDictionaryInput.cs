@@ -4,11 +4,12 @@ using TestWork.Common;
 
 namespace TestWork.Core.DataInputs
 {
-    public class DataInput : IDataInput
+    public class DataDictionaryInput : IDataDictionaryInput
     {
+
         private readonly TextReader _textReader;
 
-        public DataInput(TextReader textReader)
+        public DataDictionaryInput(TextReader textReader)
         {
             if (textReader == null)
             {
@@ -17,8 +18,8 @@ namespace TestWork.Core.DataInputs
             _textReader = textReader;
         }
 
+
         public event Action<string, int> SaveDataInfo;
-        public event Action<string> SaveQueryInfo;
 
         public void Start()
         {
@@ -41,19 +42,8 @@ namespace TestWork.Core.DataInputs
                 var cnt = int.Parse(arr[1]);
                 SaveDataInfo(arr[0], cnt);
             }
-            var countSearchStr = _textReader.ReadLine();
 
-            if (string.IsNullOrEmpty(countSearchStr))
-            {
-                throw new FormatException("Ожидались другие данные");
-            }
-
-            var countSearchData = int.Parse(countSearchStr);
-
-            for (var i = 0; i < countSearchData; i++)
-            {
-                SaveQueryInfo(_textReader.ReadLine());
-            }
         }
     }
 }
+

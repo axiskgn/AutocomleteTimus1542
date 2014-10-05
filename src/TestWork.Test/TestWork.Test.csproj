@@ -55,18 +55,37 @@
   <ItemGroup>
     <Compile Include="ComplexTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NetworkUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="test.in" />
+    <None Include="test.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TestWork.Common\TestWork.Common.csproj">
+    <ProjectReference Include="..\Common\TestWork.Common\TestWork.Common.csproj">
       <Project>{52056842-5605-418B-843C-ECC28D9C8443}</Project>
       <Name>TestWork.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TestWork.Core\TestWork.Core.csproj">
+    <ProjectReference Include="..\Common\TestWork.Core\TestWork.Core.csproj">
       <Project>{3B596E55-30E1-4F7B-A53F-D883145A574D}</Project>
       <Name>TestWork.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Client\TestWork.Client.Common\TestWork.Client.Common.csproj">
+      <Project>{D243DE40-81B2-4514-8A30-0D5B04700A5A}</Project>
+      <Name>TestWork.Client.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Client\TestWork.Client.Core\TestWork.Client.Core.csproj">
+      <Project>{DFFA6522-71EE-4138-B8C9-DB8F62F14331}</Project>
+      <Name>TestWork.Client.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Server\TestWork.Server.Common\TestWork.Server.Common.csproj">
+      <Project>{97231A9E-945C-4971-9E6B-36262D0C0B47}</Project>
+      <Name>TestWork.Server.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Server\TestWork.Server.Core\TestWork.Server.Core.csproj">
+      <Project>{8846DE99-3DC8-4A6B-A23E-23E2593BF2A7}</Project>
+      <Name>TestWork.Server.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

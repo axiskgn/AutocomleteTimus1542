@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,7 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="test.in">
+    <None Include="client.in">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="start.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -57,6 +61,14 @@
     <ProjectReference Include="..\..\Common\TestWork.Core\TestWork.Core.csproj">
       <Project>{3B596E55-30E1-4F7B-A53F-D883145A574D}</Project>
       <Name>TestWork.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Client.Common\TestWork.Client.Common.csproj">
+      <Project>{D243DE40-81B2-4514-8A30-0D5B04700A5A}</Project>
+      <Name>TestWork.Client.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestWork.Client.Core\TestWork.Client.Core.csproj">
+      <Project>{DFFA6522-71EE-4138-B8C9-DB8F62F14331}</Project>
+      <Name>TestWork.Client.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

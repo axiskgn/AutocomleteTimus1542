@@ -6,12 +6,9 @@ namespace TestWork.Common
     /// <summary>
     /// Получение данных
     /// </summary>
-    public interface IDataInput
+    public interface IDataQueryInput
     {
-        /// <summary>
-        /// Событие для сохранения НСИ
-        /// </summary>
-        event Action<string, int> SaveDataInfo;
+
 
         /// <summary>
         /// Событие для сохранения данных запроса

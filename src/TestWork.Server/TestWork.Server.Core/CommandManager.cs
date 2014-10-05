@@ -13,7 +13,7 @@ namespace TestWork.Server.Core
             _commands.Add(cmdName, cmd);
         }
 
-        public void ExecCommand(string cmdName, string[] param, Stream dataOutput)
+        public void ExecCommand(string cmdName, string[] param, INetworkServerController dataOutput)
         {
             var cmd = _commands[cmdName];
             cmd.Exec(param, dataOutput);

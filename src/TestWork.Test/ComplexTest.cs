@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestWork.Common;
 using TestWork.Core;
 using TestWork.Core.DataInputs;
 using TestWork.Core.DataOutputs;
 using TestWork.Core.Storages;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestWork.Test
 {
@@ -59,13 +60,15 @@ karetachi
             var sb = new StringBuilder();
             var output = new StringWriter(sb);
 
-            var dataInput = new DataInput(input);
+            var dataQueryInput = new DataQueryInput(input);
+            var dataDictionaryInput = new DataDictionaryInput(input);
+
             IStorage storage = new Storage4();
             IDataOutput dataOutput = new DataOutput(output);
             var searchData = new List<string>();
             var mainProcess = new MainProcess();
 
-            mainProcess.Process(dataInput, storage, searchData, dataOutput);
+            mainProcess.Process(dataDictionaryInput, dataQueryInput, storage, searchData, dataOutput);
 
             Assert.AreEqual(rawDataOut, sb.ToString());
         }
@@ -78,7 +81,7 @@ karetachi
         [TestMethod]
         public void SpeedTest()
         {
-            const int maxSec = 4;
+            const int maxSec = 5;
 
             var inFile = new FileStream("test.in", FileMode.Open);
             var outFile = new FileStream("test.out", FileMode.CreateNew);
@@ -88,13 +91,14 @@ karetachi
 
             var startTime = DateTime.Now;
 
-            var dataInput = new DataInput(input);
+            var dataQueryInput = new DataQueryInput(input);
+            var dataDictionaryInput = new DataDictionaryInput(input);
             IStorage storage = new Storage4();
             IDataOutput dataOutput = new DataOutput(output);
             var searchData = new List<string>();
             var mainProcess = new MainProcess();
 
-            mainProcess.Process(dataInput, storage, searchData, dataOutput);
+            mainProcess.Process(dataDictionaryInput, dataQueryInput, storage, searchData, dataOutput);
 
             var endTime = DateTime.Now;
             var span = endTime - startTime;

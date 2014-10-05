@@ -1,0 +1,1 @@
+TestWork.Client.ConsoleApp.exe localhost 1117 <client.in

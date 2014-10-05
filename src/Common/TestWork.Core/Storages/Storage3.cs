@@ -11,6 +11,7 @@ namespace TestWork.Core.Storages
     /// Чистый алгоритм генерации бесконечного дерева 
     /// не применим, слишком большие дервья - всё работает медленно
     /// Оставлен с целью построения на его базе других алгоритмов
+    /// Неплохо показал себя при использовании на сервере
     /// </summary>
     public class Storage3 :IStorage
     {
@@ -43,10 +44,9 @@ namespace TestWork.Core.Storages
             
             value.List.Add(new KeyValuePair<string, int>(name, cnt));
             Count++;
-            if (value.List.Count > 10)
-            {
-                value.List = value.List.OrderByDescending(t => t.Value).ThenByDescending(k => k.Key).Take(10).ToList();
-            }
+
+            value.List = value.List.OrderByDescending(t => t.Value).ThenByDescending(k => k.Key).Take(10).ToList();
+
             if (wayLeft.Length > 1)
             {
                 var newWayLeft = wayLeft.Remove(0, 1);
@@ -68,7 +68,7 @@ namespace TestWork.Core.Storages
             }
             catch (Exception e)
             {
-                Debug.WriteLine(e);
+                //Debug.WriteLine(e);
                 return new List<string>();
             }
 

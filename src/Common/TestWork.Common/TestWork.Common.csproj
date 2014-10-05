@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IDataInput.cs" />
+    <Compile Include="IDataDictionaryInput.cs" />
+    <Compile Include="IDataQueryInput.cs" />
     <Compile Include="IDataOutput.cs" />
     <Compile Include="IMainProcess.cs" />
     <Compile Include="IStorage.cs" />
