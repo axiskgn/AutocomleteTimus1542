@@ -19,7 +19,7 @@ namespace TestWork.ConsoleApp
 
             IDataDictionaryInput dataDictionaryInput = new DataDictionaryInput(Console.In);
             IDataQueryInput dataQueryInput = new DataQueryInput(Console.In);
-            IStorage storage = new Storage4();
+            IStorage storage = new Storage2();
             IDataOutput dataOutput = new DataOutput(Console.Out);
             var searchData = new List<string>();
             var mainProcess = new MainProcess();
